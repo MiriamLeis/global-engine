@@ -4,6 +4,7 @@
 #include <string>
 #include "FactoriesFactory.h"
 #include "OgreSDLContext.h"
+#include "TextRC.h"
 
 Game::Game() {}
 
@@ -30,6 +31,8 @@ void Game::init(std::string _firstScene)
   
 	scene = new Scene();
 	setScene(_firstScene);
+
+	TextRC* TRC = new TextRC;
 
 	update();
 }
