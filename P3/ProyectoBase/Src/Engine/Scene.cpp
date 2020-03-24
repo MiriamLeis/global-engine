@@ -6,7 +6,6 @@
 #include "OgreVector3.h"
 #include "PhysicsContext.h"
 
-#include <iostream>
 #include <json.h>
 
 Scene::Scene(Game* _game) {
@@ -16,6 +15,7 @@ Scene::Scene(Game* _game) {
 
     Loader loader;
     loader.readPrefabs(this);
+    loader.readComponentsPrefabs(this);
 
     game = _game;
 }
@@ -88,12 +88,19 @@ void Scene::addPrefab(std::string id, Json::Value components) {
     prefabs.emplace(id, components);
 }
 
-void Scene::clearPrefabs() {
-    for (auto it : entities) {
-        delete it.second;
-    }
+void Scene::insertComponent(std::string _component, Entity* _entity) {
+    Loader loader;
+    loader.insertComponent(componentsPrefabs.find(_component)->second, _entity,
+                           this);
+}
 
+void Scene::addComponentPrefab(std::string _type, Json::Value _info) {
+    componentsPrefabs.emplace(_type, _info);
+}
+
+void Scene::clearPrefabs() {
     prefabs.clear();
+    componentsPrefabs.clear();
 }
 
 ComponentsManager* Scene::getComponentsManager() { return componentManager; }

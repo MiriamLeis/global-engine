@@ -17,6 +17,8 @@ class Scene {
     std::map<std::string, Entity*> entities;
     // id, components
     std::map<std::string, Json::Value> prefabs;
+    // type, type and attributes
+    std::map<std::string, Json::Value> componentsPrefabs;
 
     ComponentsManager* componentManager;
 
@@ -54,6 +56,12 @@ class Scene {
     void clonePrefabInfo(std::string _prefab, Entity* _entity);
     // Add prefab into the map.
     void addPrefab(std::string id, Json::Value components);
+
+    // Search the component in the map and insert it into the entity
+    void insertComponent(std::string _component, Entity* _entity);
+    // Add the component prefab into the map.
+    void addComponentPrefab(std::string _type, Json::Value _info);
+
     // clear the entities of the map.
     void clearPrefabs();
 

@@ -72,6 +72,36 @@ void Loader::createPrefab(Json::Value& _data, Scene* _scene) {
     _scene->addPrefab(id, components);
 }
 
+void Loader::readComponentsPrefabs(Scene* _scene) {
+    std::fstream file;
+    file.open("files/componentsPrefabs.json");
+
+    if (!file.is_open())
+        throw std::exception("Loader: files/componentsPrefabs.json not found");
+
+    Json::Value data;
+    file >> data;
+
+    if (!data["components"].isArray())
+        throw std::exception(
+            "Loader: files/componentsPrefabs.json: components is not an array");
+    Json::Value components = data["components"];
+
+    int numPrefabs = components.size();
+    for (int i = 0; i < numPrefabs; i++)
+        createComponentPrefab(components[i], _scene);
+}
+
+void Loader::createComponentPrefab(Json::Value& _data, Scene* scene) {
+    if (!_data["type"].isString())
+        throw std::exception("Loader: type is not string");
+
+    if (!_data["attributes"].isObject())
+        throw std::exception("Loader: attributes is not an Object");
+
+    scene->addComponentPrefab(_data["type"].asString(), _data);
+}
+
 void Loader::readObjects(std::string _fileName, Scene* _scene) {
     std::fstream file;
     file.open("files/" + _fileName);
@@ -114,10 +144,14 @@ void Loader::setComponents(Json::Value& _data, Entity* _entity, Scene* _scene) {
         if (!_data[i]["type"].isString() || !_data[i]["attributes"].isObject())
             throw std::exception(
                 "Loader: type is not a string or attributes is not an Object");
-        _entity->addComponent(
-            _data[i]["type"].asString(),
-            FactoriesFactory::getInstance()
-                ->find(_data[i]["type"].asString())
-                ->create(_entity, _data[i]["attributes"], _scene));
+        insertComponent(_data[i], _entity, _scene);
     }
+}
+
+void Loader::insertComponent(Json::Value& _data, Entity* _entity,
+                             Scene* _scene) {
+    _entity->addComponent(
+        _data["type"].asString(),
+        FactoriesFactory::getInstance()->find(_data["type"].asString()) ->create(_entity, _data["attributes"], 
+        _scene));
 }

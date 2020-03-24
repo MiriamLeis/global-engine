@@ -24,10 +24,17 @@ class Loader {
     // Create a prefab
     void createPrefab(Json::Value& _data, Scene* scene);
 
+    // Read the components prefabs from the components prefab file
+    void readComponentsPrefabs(Scene* scene);
+    // Create a prefab
+    void createComponentPrefab(Json::Value& _data, Scene* scene);
+
     // Read the entities of the scene from the scene file
     void readObjects(std::string _fileName, Scene* scene);
     // Create an entity
     void createEntity(Json::Value& _data, Scene* scene);
     // Set the components to an entity
     void setComponents(Json::Value& _data, Entity* _entity, Scene* scene);
+    // insert a component to an entity
+    void insertComponent(Json::Value& _data, Entity* _entity, Scene* scene);
 };

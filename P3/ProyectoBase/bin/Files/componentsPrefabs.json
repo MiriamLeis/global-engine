@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "type": "LifeC",
+      "attributes": {
+        "life": 50
+      }
+    }
+  ]
+}
