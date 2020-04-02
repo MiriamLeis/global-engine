@@ -7,6 +7,8 @@
 #include "Scene.h"
 #include "TridimensionalObjectRC.h"
 
+#include "ConstantMovementC.h"
+
 #include "OgreRoot.h"
 
 #include <json.h>
@@ -34,6 +36,11 @@ void ChangeGravityIC::handleInput(const SDL_Event& _event) {
         dynamic_cast<TridimensionalObjectRC*>(
             father->getComponent("TridimensionalObjectRC"))
             ->setMaterial(!movingIzq ? mRight : mLeft);
+    }
+    if (_event.type == SDL_KEYDOWN && _event.key.keysym.sym == SDLK_a) {
+        RigidbodyPC* body =
+            dynamic_cast<RigidbodyPC*>(father->getComponent("RigidbodyPC"));
+        body->setLinearVelocity(Ogre::Vector3(0, 0.0f, 0));
     }
 }
 
