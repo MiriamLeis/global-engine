@@ -58,7 +58,7 @@
         {
           "type": "RigidbodyPC",
           "attributes": {
-            "position": [ 800, 17000, 0 ],
+            "position": [ 700, 0, 0 ],
             "shape": [ 25, 25, 25 ],
             "mass": 1,
             "gravity": [ -50, 0, 0 ],
@@ -72,7 +72,7 @@
         {
           "type": "ChangeGravityIC",
           "attributes": {
-            "speed": 900,
+            "speed": 250,
             "materialL": "PurpleColourMaterial",
             "materialR": "BlueColourMaterial"
           }
@@ -80,7 +80,7 @@
         {
           "type": "ConstantMovementC",
           "attributes": {
-            "speed": 700
+            "speed": 900
           }
         }
       ]
@@ -89,7 +89,7 @@
     // WALLS OF THE TUBE
     // First Segment of the Game
     {
-      "id": "ParedIzq1P1",
+      "id": "LeftWallFirstSegment1",
       "components": [
         {
           "type": "TransformComponent",
@@ -124,7 +124,7 @@
       ]
     },
     {
-      "id": "ParedDer1P1",
+      "id": "RightWallFirstSegment1",
       "components": [
         {
           "type": "TransformComponent",
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "id": "ParedIzq2P1",
+      "id": "LeftWallFirstSegment2",
       "components": [
         {
           "type": "TransformComponent",
@@ -194,7 +194,7 @@
       ]
     },
     {
-      "id": "ParedDer2P1",
+      "id": "RightWallFirstSegment2",
       "components": [
         {
           "type": "TransformComponent",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "id": "ParedIzq3P1",
+      "id": "LeftWallFirstSegment3",
       "components": [
         {
           "type": "TransformComponent",
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "id": "ParedDer3P1",
+      "id": "RightWallFirstSegment3",
       "components": [
         {
           "type": "TransformComponent",
@@ -300,7 +300,7 @@
     },
     // Second Segment of the Game
     {
-      "id": "ParedIzq1P2",
+      "id": "LeftWallSecondSegment1",
       "components": [
         {
           "type": "TransformComponent",
@@ -335,7 +335,7 @@
       ]
     },
     {
-      "id": "ParedDer1P2",
+      "id": "RightWallSecondSegment1",
       "components": [
         {
           "type": "TransformComponent",
@@ -370,7 +370,7 @@
       ]
     },
     {
-      "id": "ParedIzq2P2",
+      "id": "LeftWallSecondSegment2",
       "components": [
         {
           "type": "TransformComponent",
@@ -405,7 +405,7 @@
       ]
     },
     {
-      "id": "ParedDer2P2",
+      "id": "RightWallSecondSegment2",
       "components": [
         {
           "type": "TransformComponent",
@@ -440,7 +440,7 @@
       ]
     },
     {
-      "id": "ParedIzq3P2",
+      "id": "LeftWallSecondSegment3",
       "components": [
         {
           "type": "TransformComponent",
@@ -475,7 +475,7 @@
       ]
     },
     {
-      "id": "ParedDer3P2",
+      "id": "RightWallSecondSegment3",
       "components": [
         {
           "type": "TransformComponent",
@@ -510,7 +510,7 @@
       ]
     },
     {
-      "id": "ParedIzq4P2",
+      "id": "LeftWallSecondSegment4",
       "components": [
         {
           "type": "TransformComponent",
@@ -545,7 +545,7 @@
       ]
     },
     {
-      "id": "ParedDer4P2",
+      "id": "RightWallSecondSegment4",
       "components": [
         {
           "type": "TransformComponent",
@@ -862,7 +862,7 @@
     },
     // Fourth Segment of the Game
     {
-      "id": "LeftWallFourthdSegment1",
+      "id": "LeftWallFourthSegment1",
       "components": [
         {
           "type": "TransformComponent",
@@ -897,7 +897,7 @@
       ]
     },
     {
-      "id": "RightWallFourthdSegment1",
+      "id": "RightWallFourthSegment1",
       "components": [
         {
           "type": "TransformComponent",
@@ -932,7 +932,7 @@
       ]
     },
     {
-      "id": "LeftWallFourthdSegment2",
+      "id": "LeftWallFourthSegment2",
       "components": [
         {
           "type": "TransformComponent",
@@ -967,7 +967,7 @@
       ]
     },
     {
-      "id": "RightWallFourthdSegment2",
+      "id": "RightWallFourthSegment2",
       "components": [
         {
           "type": "TransformComponent",
@@ -1002,7 +1002,7 @@
       ]
     },
     {
-      "id": "LeftWallFourthdSegment3",
+      "id": "LeftWallFourthSegment3",
       "components": [
         {
           "type": "TransformComponent",
@@ -1037,7 +1037,7 @@
       ]
     },
     {
-      "id": "RightWallFourthdSegment3",
+      "id": "RightWallFourthSegment3",
       "components": [
         {
           "type": "TransformComponent",
@@ -1071,12 +1071,46 @@
         }
       ]
     },
-
+    {
+      "id": "UpperWall",
+      "components": [
+        {
+          "type": "TransformComponent",
+          "attributes": {
+            "position": [ 0, 0, 0 ],
+            "orientation": [ 0, 0, 0 ],
+            "scale": [ 10, 2, 1 ]
+          }
+        },
+        {
+          "type": "TridimensionalObjectRC",
+          "attributes": {
+            "mesh": "cube.mesh",
+            "node": "nCube",
+            "material": "OrangeColourMaterial"
+          }
+        },
+        {
+          "type": "RigidbodyPC",
+          "attributes": {
+            "position": [ 0, 24000, 0 ],
+            "shape": [ 500, 100, 50 ],
+            "mass": 0,
+            "gravity": [ 0, 0, 0 ],
+            "trigger": false,
+            "kinematic": false,
+            "static": true,
+            "friction": 0,
+            "restitution": 0
+          }
+        }
+      ]
+    },
     // INSIDE OF THE TUBE
     // Inner Left and Right Blocks
-    // First Segment of the Game (Pair 2 has only one block)
+    // First Segment of the Game
     {
-      "id": "ParedIzqMitad1P1",
+      "id": "FirstSegmentBlock1",
       "components": [
         {
           "type": "TransformComponent",
@@ -1111,7 +1145,7 @@
       ]
     },
     {
-      "id": "ParedDerMitadE1",
+      "id": "FirstSegmentBlock2",
       "components": [
         {
           "type": "TransformComponent",
@@ -1146,14 +1180,14 @@
       ]
     },
     {
-      "id": "ParedIzqMitad2P1",
+      "id": "FirstSegmentBlock3",
       "components": [
         {
           "type": "TransformComponent",
           "attributes": {
             "position": [ 0, 0, 0 ],
             "orientation": [ 0, 0, 0 ],
-            "scale": [ 0.5, 5, 1 ]
+            "scale": [ 1, 5, 1 ]
           }
         },
         {
@@ -1161,14 +1195,14 @@
           "attributes": {
             "mesh": "cube.mesh",
             "node": "nCube",
-            "material": "PurpleColourMaterial"
+            "material": "BrownColourMaterial"
           }
         },
         {
           "type": "RigidbodyPC",
           "attributes": {
-            "position": [ 25, 3000, 0 ],
-            "shape": [ 25, 250, 50 ],
+            "position": [ 0, 3000, 0 ],
+            "shape": [ 50, 250, 50 ],
             "mass": 0,
             "gravity": [ 0, 0, 0 ],
             "trigger": false,
@@ -1181,7 +1215,7 @@
       ]
     },
     {
-      "id": "ParedIzqMitad3P1",
+      "id": "FirstSegmentBlock4",
       "components": [
         {
           "type": "TransformComponent",
@@ -1216,7 +1250,7 @@
       ]
     },
     {
-      "id": "ParedDerMitad3P1",
+      "id": "FirstSegmentBlock5",
       "components": [
         {
           "type": "TransformComponent",
@@ -1251,7 +1285,7 @@
       ]
     },
     {
-      "id": "ParedIzqMitad4P1",
+      "id": "FirstSegmentBlock6",
       "components": [
         {
           "type": "TransformComponent",
@@ -1286,7 +1320,7 @@
       ]
     },
     {
-      "id": "ParedDerMitad4P1",
+      "id": "FirstSegmentBlock7",
       "components": [
         {
           "type": "TransformComponent",
@@ -1322,7 +1356,7 @@
     },
     // Second Segment of the Game
     {
-      "id": "ParedIzqInterna1P2",
+      "id": "SecondSegmentBlock1",
       "components": [
         {
           "type": "TransformComponent",
@@ -1357,7 +1391,7 @@
       ]
     },
     {
-      "id": "ParedDerInterna1P2",
+      "id": "SecondSegmentBlock2",
       "components": [
         {
           "type": "TransformComponent",
@@ -1392,7 +1426,7 @@
       ]
     },
     {
-      "id": "ParedIzqInterna2P2",
+      "id": "SecondSegmentBlock3",
       "components": [
         {
           "type": "TransformComponent",
@@ -1427,7 +1461,7 @@
       ]
     },
     {
-      "id": "ParedDerInterna2P2",
+      "id": "SecondSegmentBlock4",
       "components": [
         {
           "type": "TransformComponent",
@@ -1462,7 +1496,7 @@
       ]
     },
     {
-      "id": "ParedIzqInterna3P2",
+      "id": "SecondSegmentBlock5",
       "components": [
         {
           "type": "TransformComponent",
@@ -1497,7 +1531,7 @@
       ]
     },
     {
-      "id": "ParedDerInterna3P2",
+      "id": "SecondSegmentBlock6",
       "components": [
         {
           "type": "TransformComponent",
@@ -1532,7 +1566,7 @@
       ]
     },
     {
-      "id": "ParedIzqInterna4P2",
+      "id": "SecondSegmentBlock7",
       "components": [
         {
           "type": "TransformComponent",
@@ -1567,7 +1601,7 @@
       ]
     },
     {
-      "id": "ParedDerInterna4P2",
+      "id": "SecondSegmentBlock8",
       "components": [
         {
           "type": "TransformComponent",
@@ -1602,7 +1636,7 @@
       ]
     },
     {
-      "id": "ParedIzqMitad5P2",
+      "id": "SecondSegmentBlock9",
       "components": [
         {
           "type": "TransformComponent",
@@ -1637,7 +1671,7 @@
       ]
     },
     {
-      "id": "ParedDerMitad5P2",
+      "id": "SecondSegmentBlock10",
       "components": [
         {
           "type": "TransformComponent",
@@ -1672,7 +1706,7 @@
       ]
     },
     {
-      "id": "BloqueIndividual3P2",
+      "id": "SecondSegmentBlock11",
       "components": [
         {
           "type": "TransformComponent",
@@ -1707,7 +1741,7 @@
       ]
     },
     {
-      "id": "BloqueIndividual4P2",
+      "id": "SecondSegmentBlock12",
       "components": [
         {
           "type": "TransformComponent",
@@ -1742,7 +1776,7 @@
       ]
     },
     {
-      "id": "BloqueIndividual5P2",
+      "id": "SecondSegmentBlock14",
       "components": [
         {
           "type": "TransformComponent",
@@ -1777,7 +1811,7 @@
       ]
     },
     {
-      "id": "BloqueIndividual6P2",
+      "id": "SecondSegmentBlock15",
       "components": [
         {
           "type": "TransformComponent",
@@ -1812,7 +1846,7 @@
       ]
     },
     {
-      "id": "ParedIzqInterna6P2",
+      "id": "SecondSegmentBlock16",
       "components": [
         {
           "type": "TransformComponent",
@@ -1847,7 +1881,7 @@
       ]
     },
     {
-      "id": "ParedDerInterna6P2",
+      "id": "SecondSegmentBlock17",
       "components": [
         {
           "type": "TransformComponent",
@@ -3054,7 +3088,7 @@
           "attributes": {
             "mesh": "cube.mesh",
             "node": "nCube",
-            "material": "BlueColourMaterial"
+            "material": "BrownColourMaterial"
           }
         },
         {
@@ -3159,7 +3193,7 @@
           "attributes": {
             "mesh": "cube.mesh",
             "node": "nCube",
-            "material": "BlueColourMaterial"
+            "material": "BrownColourMaterial"
           }
         },
         {
