@@ -37,11 +37,6 @@ void ChangeGravityIC::handleInput(const SDL_Event& _event) {
             father->getComponent("TridimensionalObjectRC"))
             ->setMaterial(!movingIzq ? mRight : mLeft);
     }
-    if (_event.type == SDL_KEYDOWN && _event.key.keysym.sym == SDLK_a) {
-        RigidbodyPC* body =
-            dynamic_cast<RigidbodyPC*>(father->getComponent("RigidbodyPC"));
-        body->setLinearVelocity(Ogre::Vector3(0, 0.0f, 0));
-    }
 }
 
 void ChangeGravityIC::setSpeed(float _speed) { speed = _speed; }

@@ -1,7 +1,7 @@
 {
 
   "entities": [
-    // Game Camera OFFSET A 1000
+    // Game Camera
     {
       "id": "Camera",
       "components": [
@@ -18,7 +18,7 @@
           "attributes": {
             "node": "nCamera",
             "viewportColour": [ 0, 0, 0 ],
-            "offset": [ 0, 0, 10000 ],
+            "offset": [ 0, 0, 1000 ],
             "lookAt": [ 0, 0, -1 ],
             "targetId": "Player",
             "follow": [ false, true, false ]
@@ -34,7 +34,7 @@
         }
       ]
     },
-    // Player Character CAMBIAR VELOCIDAD DE NUEVO A 250 250 y POSICION A 0 0
+    // Player Character
     {
       "id": "Player",
       "components": [
@@ -58,7 +58,7 @@
         {
           "type": "RigidbodyPC",
           "attributes": {
-            "position": [ 700, 0, 0 ],
+            "position": [ 0, 0, 0 ],
             "shape": [ 25, 25, 25 ],
             "mass": 1,
             "gravity": [ -50, 0, 0 ],
@@ -80,7 +80,7 @@
         {
           "type": "ConstantMovementC",
           "attributes": {
-            "speed": 900
+            "speed": 250
           }
         }
       ]
