@@ -129,6 +129,27 @@
           }
         }
       ]
+    },
+	{
+      "id": "Melee",
+      "components": [
+        {
+          "type": "TransformComponent",
+          "attributes": {
+            "position": [ 50, 20, 0 ],
+            "orientation": [ 90, 180, 90 ],
+            "scale": [ 200, 200, 200 ]
+          }
+        },
+        {
+          "type": "TridimensionalObjectRC",
+          "attributes": {
+            "mesh": "zardLOW_POLY.mesh",
+            "node": "nMelee",
+            "material": "zard19-Default"
+          }
+        }
+      ]
     }
   ]
 }
