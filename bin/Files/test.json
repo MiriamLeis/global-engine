@@ -146,7 +146,7 @@
           "attributes": {
             "mesh": "zardLOW_POLY.mesh",
             "node": "nMelee",
-            "material": "zard19-Default"
+            "material": "MeleeEnemyMaterial"
           }
         }
       ]

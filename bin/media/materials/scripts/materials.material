@@ -110,11 +110,11 @@ material EnemyBulletMaterial
     }
 }
 
-material zard19-Default
+material "MeleeEnemyMaterial"
 {
-	technique //zard19_-_Default_technique
+	technique
 	{
-		pass //zard19_-_Default_standard
+		pass 
 		{
 			ambient 1 1 1 1
 			diffuse 1 1 1 1
@@ -123,31 +123,10 @@ material zard19-Default
 
 			scene_blend alpha_blend
 			depth_write off
-			/*
-			vertex_program_ref zardvsLightGENNORM0 {}
-			
-			fragment_program_ref zardfpLightGENDIFF0SPEC0NORM0
-			{
-				param_named normalMul float 1
-			}
-			*/
+
 			texture_unit
 			{
 				texture zardzard_diff.dds
-				tex_coord_set 0
-				colour_op modulate
-			}
-
-			texture_unit
-			{
-				texture zardzard_spec.dds
-				tex_coord_set 0
-				colour_op modulate
-			}
-
-			texture_unit
-			{
-				texture zardzard_normal.dds
 				tex_coord_set 0
 				colour_op modulate
 			}
